@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Movies{% endblock title %}
+{% block content %}
+        <div class="container">
+            <h2 style="margin-top: 1em; margin-bottom: 1em;" class="text-center">Movies list</h2>
+            <ul class="list-group">
+                {% for movies in movie %}
+                <li class="list-group-item">
+                    <img src="{% static 'movie1.png' %}" alt="Cinema Icon" style="width:24px; height:24px; margin-right:10px;">
+                    <a href="movie/{{movies.id}}">{{ movies | capfirst }} - {{ movies.release_year}}</a>
+                    <p style="text-indent: 2.3em;">{{movies.genre}}</p>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+{% endblock content %}

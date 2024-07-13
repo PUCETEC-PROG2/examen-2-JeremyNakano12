@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}{{movie}}{% endblock title %}
+{% block content %}
+    <div class="container">
+        <p style="font-size: 1.7em; margin-top: 1em; margin-bottom: 1em;" class= "text-center">You have chosen: <strong>{{ movie | capfirst }}</strong></p>
+        <h3>Features:</h3>
+        <ul class="list-group">
+            <li class="list-group-item"><img src="{% static 'movie1.png' %}" alt="Cinema Camera" style="width:24px; height:24px; margin-right:10px;"><strong>Genre:</strong> {{ movie.genre }}</li>
+            <li class="list-group-item"><img src="{% static 'movie1.png' %}" alt="Cinema Camera" style="width:24px; height:24px; margin-right:10px;"><strong>Director:</strong> {{ movie.director }}</li>
+            <li class="list-group-item"><img src="{% static 'movie1.png' %}" alt="Cinema Camera" style="width:24px; height:24px; margin-right:10px;"><strong>Release Year:</strong> {{ movie.release_year }}</li>
+            <li class="list-group-item"><img src="{% static 'movie1.png' %}" alt="Cinema Camera" style="width:24px; height:24px; margin-right:10px;"><strong>Synopsis:</strong> {{ movie.sinopsis }}</li>
+        </ul> 
+        <div class="d-flex justify-content-center">
+            <a href="/">
+                <button style="margin-top: 3em;" class="btn btn-outline-primary btn-lg btn-block">
+                    <h6>Return</h6>
+                </button>
+            </a>
+        </div>
+    </div>
+{% endblock content %}
